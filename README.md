@@ -9,6 +9,7 @@ MainActivity.this.runOnUiThread(new Runnable() {
         Log.d("UI thread", "I am the UI thread");
     }
 });
+
 or
 
 MainActivity.this.myView.post(new Runnable() {
@@ -16,7 +17,8 @@ MainActivity.this.myView.post(new Runnable() {
         Log.d("UI thread", "I am the UI thread");
     }
 });
-and
+
+or
 
 private class BackgroundTask extends AsyncTask<String, Void, Bitmap> {
     protected void onPostExecute(Bitmap result) {
@@ -34,7 +36,6 @@ new Handler().post(new Runnable() {
 
 
 private void runThread() {
-
     new Thread() {
         public void run() {
             while (i++ < 1000) {
